@@ -9,7 +9,7 @@
 import UIKit
 import GoogleMaps
 
-class ViewController: UIViewController {
+class Map: UIViewController {
 	
 	
 	// MARK: Interface outlets
@@ -19,6 +19,9 @@ class ViewController: UIViewController {
 	// MARK: Private instance
 	private let map = GoogleMap()
 	
+	let lat = 47.824952
+	 let long = 35.090359
+	
 	
 	
 	//MARK: UIViewController lifecycle
@@ -26,6 +29,14 @@ class ViewController: UIViewController {
 		super.viewDidLoad()
 		
 		map.createMapView(from: mapView)
+		
+		let position = CLLocationCoordinate2D(latitude: lat, longitude: long)
+		let london = GMSMarker(position: position)
+		london.title = "London"
+		london.icon = UIImage(named: "my_location")
+		london.map = mapView
+		
+		
 		
 		
 		Decorator.decorate(self)
@@ -43,13 +54,7 @@ class ViewController: UIViewController {
 	}
 	
 	//MARK: Action funcs
-	@IBAction func changeMapStyle(_ button: UIButton) {
-		if let title = button.currentTitle {
-			self.mapView.mapStyle(withFilename: title, andType: "json")
-		}
-	}
-	
-	
+
 	@IBAction func showMyLocation(_ sender: Any) {
 		let location: CLLocation? = mapView.myLocation
 		if location != nil {
@@ -61,14 +66,15 @@ class ViewController: UIViewController {
 
 
 
-extension ViewController {
+extension Map {
 	fileprivate class Decorator {
 		
 		private init() {}
 		
-		static func decorate(_ vc: ViewController) {
+		static func decorate(_ vc: Map) {
 			vc.showMyLocation.transform = CGAffineTransform(scaleX: -1, y: 1)
 			vc.showMyLocation.layer.cornerRadius = vc.showMyLocation.frame.height / 2
+			vc.navigationController?.isNavigationBarHidden = false
 		}
 	}
 }

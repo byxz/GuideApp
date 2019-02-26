@@ -41,7 +41,7 @@ final class Constants {
     }
     
     struct MainMenu {
-        static let menuOpen = 500
-        static let menuClose = 130
+        static let menuOpen = -40
+        static let menuClose = -330
     }
 }

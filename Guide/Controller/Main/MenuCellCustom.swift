@@ -6,4 +6,14 @@
 //  Copyright © 2019 Evgeniy Opryshko. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+
+class MenuCellCustom: UITableViewCell {
+	
+	@IBOutlet weak var titelLabel: UILabel!
+	
+	@IBOutlet weak var titelImage: UIImageView!
+	
+	@IBOutlet weak var titelView: UIView!
+}

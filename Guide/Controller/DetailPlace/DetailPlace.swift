@@ -6,4 +6,10 @@
 //  Copyright © 2019 Evgeniy Opryshko. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+class DetailPlace: UIViewController {
+	
+	var passedData = (title: "Name", img: #imageLiteral(resourceName: "my_location"), price: 0)
+	
+}

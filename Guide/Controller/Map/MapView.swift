@@ -1,5 +1,5 @@
 //
-//  Position.swift
+//  MapView.swift
 //  Guide
 //
 //  Created by Evgeniy Opryshko on 21/02/2019.
@@ -9,20 +9,13 @@
 import Foundation
 import GoogleMaps
 
-class Position {
-	
-	
-	 func loadView() {
+class MapView1 {
+
+	static func loadView(view: UIView) -> UIView {
 		// Create a GMSCameraPosition that tells the map to display the
 		let camera = GMSCameraPosition.camera(withLatitude: 47.824952, longitude: 35.090359, zoom: 12.0)
-		let mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
-		//view = mapView
-		
-		// Creates a marker in the center of the map.
-		let marker = GMSMarker()
-		marker.position = CLLocationCoordinate2D(latitude: -33.86, longitude: 151.20)
-		marker.title = "Sydney"
-		marker.snippet = "Australia"
-		marker.map = mapView
+		let mapView1 = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
+		return mapView1
 	}
+	
 }

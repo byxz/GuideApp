@@ -6,7 +6,6 @@
 //  Copyright © 2019 Evgeniy Opryshko. All rights reserved.
 //
 
-//import Foundation
 import GoogleMaps
 
 extension GMSMapView {

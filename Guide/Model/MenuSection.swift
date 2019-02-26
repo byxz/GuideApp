@@ -7,3 +7,20 @@
 //
 
 import Foundation
+
+struct MenuSection {
+	
+	let titel: String
+	let icon: String
+	let storyboard: String
+	
+}
+
+
+class MenuObjects {
+	
+	let array = [MenuSection(titel: "Карта", icon: "mapIcon", storyboard: "Map"),
+							 MenuSection(titel: "Настройки", icon: "mapIcon", storyboard: "Map"),
+							 MenuSection(titel: "Правила посещения", icon: "mapIcon", storyboard: "Map"),
+							 ]
+}
